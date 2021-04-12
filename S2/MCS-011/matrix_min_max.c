@@ -2,7 +2,7 @@
 
 int main() {
     int matrix[3][3], min_value, max_value, i , j;
-    printf("Enter the elements in the Matrix: ");
+    printf("Enter the elements of Matrix: ");
     for(i = 0; i < 3; i++) {
         for(j = 0; j < 3; j++) {
             scanf("%d", &matrix[i][j]);
