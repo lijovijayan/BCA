@@ -49,9 +49,6 @@ void compound_interest() {
     scanf("%f", &rate);
     printf("Enter duration: ");
     scanf("%f", &duration);
-    printf("Enter principal value: ");
-    printf("Enter rate: ");
-    printf("Enter duration: ");
     rate_in_percentage = rate / 100;
     // C.I. = (Principal (1 + Rate) ^ Duration) − Principal
     compound_interest = principal * power((1 + rate_in_percentage), duration) - principal;
