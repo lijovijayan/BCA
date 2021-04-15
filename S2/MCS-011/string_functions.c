@@ -48,7 +48,7 @@ void replace_character(char *str) {
     scanf(" %c", &src);
     printf("Enter the character to be raplaced with: ");
     scanf(" %c", &target);
-    for(i = 0; i < str[i] != '\0'; i++) {
+    for(i = 0; str[i] != '\0'; i++) {
         if(str[i] == src) {
             str[i] = target;
         }
@@ -57,7 +57,7 @@ void replace_character(char *str) {
 
 void uppercase(char *str) {
     int i;
-    for(i = 0; i < str[i] != '\0'; i++) {
+    for(i = 0; str[i] != '\0'; i++) {
         if(str[i] >= 'a' && str[i] <= 'z') {
             str[i] = str[i] - 32;
         }
@@ -66,7 +66,7 @@ void uppercase(char *str) {
 
 void alternate_uppercase(char *str) {
     int i;
-    for(i = 0; i < str[i] != '\0'; i++) {
+    for(i = 0; str[i] != '\0'; i++) {
         if(i % 2 == 1 && str[i] >= 'a' && str[i] <= 'z') {
             str[i] = str[i] - 32;
         }
@@ -76,7 +76,7 @@ void alternate_uppercase(char *str) {
 
 void check_character_type(char *str) {
     int i;
-    for(i = 0; i < str[i] != '\0'; i++) {
+    for(i = 0; str[i] != '\0'; i++) {
         if((str[i] >= 'a' && str[i] <= 'z') || str[i] >= 'A' && str[i] <= 'Z') {
             printf("\n%c is a 'CHARACTER'", str[i]);
         } else if(str[i] >= '0' && str[i] <= '9') {
