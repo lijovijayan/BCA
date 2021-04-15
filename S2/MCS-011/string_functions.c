@@ -1,10 +1,15 @@
 #include<stdio.h>
+
+void replace_character(char *);
+void uppercase(char *);
+void alternate_uppercase(char *);
+void check_character_type(char *);
+
 void main() {
-int choice;
-char str;
-char value[100];
-        printf("Enter a string: ");
-        scanf("%s", &str);
+    int choice;
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", &str);
     do {
         printf("Select an operation to perform\n");
         printf("1. Replace with a new charater\n");
@@ -16,32 +21,33 @@ char value[100];
         scanf("%d", &choice);
         switch(choice) {
             case 1:
-                replace();
+                replace_character(str);
                 break;
             case 2:
-                uppercase();
+                uppercase(str);
                 break;
             case 3:
-                alternate_uppercase();
+                alternate_uppercase(str);
                 break;
             case 4:
-                check_character_type();
+                check_character_type(str);
                 break;
             case 5:
                 return;
             default: 
                 printf("PLEASE ENTER A VALID CHOICE !\n");
-
         }
+        printf("\n\nUpdated string: %s\n\n", &str);
     } while(choice != 5);
 }
-replace(*char str) {
-    char src, target;
-    printf("Enter the character to be raplaced by: \n");
-    scanf("%s", &src);
-    printf("Enter the character to be raplaced with: \n");
-    scanf("%s", &target);
+
+void replace_character(char *str) {
     int i;
+    char src, target;
+    printf("Enter the character to be raplaced by: ");
+    scanf(" %c", &src);
+    printf("Enter the character to be raplaced with: ");
+    scanf(" %c", &target);
     for(i = 0; i < str[i] != '\0'; i++) {
         if(str[i] == src) {
             str[i] = target;
@@ -49,7 +55,8 @@ replace(*char str) {
     }
 }
 
-uppercase(*char str) {
+void uppercase(char *str) {
+    int i;
     for(i = 0; i < str[i] != '\0'; i++) {
         if(str[i] >= 'a' && str[i] <= 'z') {
             str[i] = str[i] - 32;
@@ -57,23 +64,25 @@ uppercase(*char str) {
     }
 }
 
-alternate_uppercase(*char str) {
+void alternate_uppercase(char *str) {
+    int i;
     for(i = 0; i < str[i] != '\0'; i++) {
-        if(i % 2 == 0 && str[i] >= 'a' && str[i] <= 'z') {
+        if(i % 2 == 1 && str[i] >= 'a' && str[i] <= 'z') {
             str[i] = str[i] - 32;
         }
     }
 
 }
 
-check_character_type(*char str) {
+void check_character_type(char *str) {
+    int i;
     for(i = 0; i < str[i] != '\0'; i++) {
         if((str[i] >= 'a' && str[i] <= 'z') || str[i] >= 'A' && str[i] <= 'Z') {
-            printf("\n%s is a 'CHARACTER'", &str[i]);
+            printf("\n%c is a 'CHARACTER'", str[i]);
         } else if(str[i] >= '0' && str[i] <= '9') {
-            printf("\n%s is a 'NUMBER'", &str[i]);
+            printf("\n%c is a 'NUMBER'", str[i]);
         } else {
-            printf("\n%s is a 'SPECIAL CHARACTER'", &str[i]);
+            printf("\n%c is a 'SPECIAL CHARACTER'", str[i]);
         }
     }
 }
